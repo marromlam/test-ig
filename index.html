@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
-<script type="text/javascript">
-if( /iPhone/i.test(navigator.userAgent) ) && (window.location.href == "https://www.hailaran.es"){
-window.location = "x-safari-https://www.hailaran.es";
-}
-</script>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    Link: <a href='x-safari-https://www.hailaran.es' target="_blank">Link 1</a>
-    Link: <a href='https://www.hailaran.es' target="_blank">Link 1</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Redirect</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the user is using an iPhone
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-
-
-    
-  </body>
+            if (/iPhone/i.test(userAgent)) {
+                // Redirect to the iPhone-specific URL
+                window.location.href = "x-safari-https://www.hailaran.es";
+            } else {
+                // Redirect to the generic URL
+                window.location.href = "https://www.hailaran.es";
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="x-safari-https://www.hailaran.es">click here for iPhone</a> or <a href="https://www.hailaran.es">click here for other devices</a>.</p>
+</body>
 </html>
