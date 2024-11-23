@@ -1,21 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Alert and Open Link</title>
+  <title>Alert with Link</title>
 </head>
 <body>
-  <button onclick="openLink()">Click Me</button>
+  <button onclick="showAlert()">Click Me</button>
 
   <script>
-    function openLink() {
-      // Show an alert
-      alert("You are being redirected to the website.");
-
-      // Open the URL in the default browser
-      window.open("https://example.com", "_blank");
+    function showAlert() {
+      if (confirm("Do you want to open the link in your browser?")) {
+        window.open("https://example.com", "_blank");
+      }
     }
   </script>
 </body>
